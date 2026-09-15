@@ -15,22 +15,23 @@
 </head>
 <body>
 <h1>Privacy Policy – GPS Camera Pro 2026</h1>
-<p class="updated">Last updated: 5 May 2025</p>
+<p class="updated">Last updated: 15 September 2026</p>
 
 <h2>1. Who we are</h2>
-<p>We operate the GPS Camera Pro 2026 Android application.<br>
-Contact: <a href="mailto:support.GPS Camera Pro 2026@gmail.com">support.GPS Camera Pro 2026@gmail.com</a></p>
+<p>We operate the GPS Camera Pro 2026 application for Android and for iOS (iPhone and iPad).<br>
+Contact: <a href="mailto:support.gpscampro@gmail.com">support.gpscampro@gmail.com</a></p>
 
 <h2>2. What data we collect and why</h2>
 
 <h3>a) Camera</h3>
 <p>We access your device camera to capture photos. Photos are processed locally on your device. We do not upload your photos to any server.</p>
+<p>Captured photos are saved on your device: on Android to your device's picture storage (or a folder you choose), and on iOS to an album in your Photos library. The app asks for access to your photos so it can show your captures in its built-in gallery and, if you choose, let you pick a company logo image. Your logo is stored only inside the app on your device.</p>
 
 <h3>b) Location (GPS)</h3>
-<p>We access your device's precise location (GPS coordinates, altitude) to stamp this information onto your photos. Location data is processed locally on your device and embedded in the captured image. We do not transmit your location to our servers. We collect location data only while the app is in use (foreground only). You can revoke location permission at any time in Android Settings.</p>
+<p>We access your device's precise location (GPS coordinates, altitude) to stamp this information onto your photos. On Android, location is provided through Google Play services; on iOS, through Apple's Location Services. Location data is processed locally on your device and embedded in the captured image. We do not transmit your location to our servers. The street address shown on the overlay is looked up using your device's built-in geocoding service (Google on Android, Apple on iOS), and the map preview is requested from TomTom as described in section h. We collect location data only while the app is in use (foreground only). You can revoke location permission at any time in your device settings (Android Settings or iOS Settings).</p>
 
 <h3>c) Crash reports (Firebase Crashlytics)</h3>
-<p>We use Firebase Crashlytics (Google LLC) to collect anonymous crash reports. These reports contain device model, Android version, app version, and a stack trace. They do not contain your name, email, or location data.<br>
+<p>We use Firebase Crashlytics (Google LLC) to collect anonymous crash reports. These reports contain device model, operating system version, app version, and a stack trace. They do not contain your name, email, or location data.<br>
 Crashlytics privacy policy: <a href="https://firebase.google.com/support/privacy">https://firebase.google.com/support/privacy</a></p>
 
 <h3>d) Analytics (Firebase Analytics)</h3>
@@ -38,29 +39,45 @@ Crashlytics privacy policy: <a href="https://firebase.google.com/support/privacy
 Firebase Analytics privacy policy: <a href="https://firebase.google.com/support/privacy">https://firebase.google.com/support/privacy</a></p>
 
 <h3>e) Account (Firebase Authentication)</h3>
-<p>We create an anonymous Firebase account on your device on first launch. This is a technical identifier used to associate your Pro purchase with your device. It is not linked to your name or email unless you choose to sign in with Google.</p>
+<p>We create an anonymous Firebase account on your device on first launch. This is a technical identifier used to associate your Pro purchase with your device. When the app starts, it sends this anonymous identifier, the app version, and your platform (Android or iOS) to our server (Firebase Cloud Functions) to set up your account. It is not linked to your name or email unless you choose to sign in with Google (available on Android only).</p>
 
-<h3>f) Pro purchase (Google Play Billing + Firebase)</h3>
-<p>If you purchase the Pro upgrade, Google Play processes your payment. We receive a purchase token from Google to verify your purchase. Your payment details are handled entirely by Google — we never see them. We store your Pro status (isPro: true/false) in Firebase Firestore, associated with your anonymous Firebase UID.</p>
+<h3>f) Pro purchase (Google Play Billing, Apple App Store + Firebase)</h3>
+<p>If you purchase the Pro upgrade on Android, Google Play processes your payment and we receive a purchase token from Google to verify your purchase. If you purchase it on iPhone or iPad, Apple's App Store processes your payment; we receive a signed transaction record from Apple to verify your purchase, and Apple notifies us when your subscription renews, lapses, or is refunded. Your payment details are handled entirely by Google or Apple — we never see them. We store your Pro status and subscription expiry in Firebase Firestore, associated with your anonymous Firebase UID.</p>
 
 <h3>g) Advertising (AdMob — free users only)</h3>
-<p>Free-tier users see ads served by Google AdMob (Google LLC). AdMob may collect your advertising ID and use it for personalised ads, subject to your consent (collected via the Google UMP consent dialog on first launch). Pro users see no ads and AdMob is not initialised for Pro users.<br>
+<p>Free-tier users see ads served by Google AdMob (Google LLC), subject to your consent (collected via the Google UMP consent dialog on first launch where required). On Android, AdMob may collect your advertising ID and use it for personalised ads. On iOS, AdMob uses your device's advertising identifier (IDFA) only if you allow tracking in Apple's App Tracking Transparency prompt; if you decline, ads are not personalised using that identifier. Pro users see no ads.<br>
 AdMob privacy policy: <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></p>
+<p><strong>Android only — ad mediation partners:</strong> on Android, AdMob may fill ads through these mediation partners, which may receive your advertising ID, device information, and IP address under the same consent choices:</p>
+<ul>
+  <li>AppLovin — <a href="https://www.applovin.com/privacy/">https://www.applovin.com/privacy/</a></li>
+  <li>Meta Audience Network — <a href="https://www.facebook.com/privacy/policy/">https://www.facebook.com/privacy/policy/</a></li>
+  <li>Unity Ads — <a href="https://unity.com/legal/game-player-and-app-user-privacy-policy">https://unity.com/legal/game-player-and-app-user-privacy-policy</a></li>
+</ul>
+<p>On iOS, ads are served by Google AdMob only.</p>
 
 <h3>h) Map tiles (TomTom)</h3>
-<p>We use TomTom's map tile service to display map previews. TomTom may log tile requests including your IP address.<br>
+<p>We use TomTom's map tile service to display the satellite map preview on your photos. To do this, the app requests the map tile covering your current area, which reveals your approximate location (the surrounding few hundred metres) to TomTom. TomTom may log tile requests including your IP address.<br>
 TomTom privacy policy: <a href="https://www.tomtom.com/privacy/">https://www.tomtom.com/privacy/</a></p>
+
+<h3>i) App integrity (Firebase App Check)</h3>
+<p>We use Firebase App Check (Google LLC) to confirm that requests to our servers come from a genuine copy of the app, using Google Play Integrity on Android and Apple App Attest on iOS. On Android, the app also asks Google Play Integrity once per session whether the app and device are genuine, and our server checks the result. These checks do not collect personal information.</p>
+
+<h3>j) App configuration (Firebase Remote Config)</h3>
+<p>The app downloads settings such as the app name and map refresh intervals from Firebase Remote Config (Google LLC). This request is associated with an anonymous Firebase installation ID.</p>
+
+<h3>k) Ratings</h3>
+<p>The app may occasionally ask whether you would like to rate it. Ratings and reviews are submitted through Google Play or Apple's App Store under their own privacy policies; we do not receive your rating or review details from the prompt.</p>
 
 <h2>3. Data we do NOT collect</h2>
 <ul>
-  <li>Your name or email (unless you sign in with Google)</li>
+  <li>Your name or email (unless you sign in with Google on Android)</li>
   <li>Your photos or photo content</li>
   <li>Your contacts, messages, or other apps' data</li>
   <li>Your precise location history (location used only at moment of capture)</li>
 </ul>
 
 <h2>4. Data sharing</h2>
-<p>We do not sell your data to any third party. Data is shared only with the service providers listed in Section 2 (Google Firebase, Google AdMob, TomTom) and only as described above.</p>
+<p>We do not sell your data to any third party. Data is shared only with the service providers listed in Section 2 (Google Firebase, Google AdMob, Google Play, Apple, TomTom, and on Android the ad mediation partners AppLovin, Meta Audience Network and Unity Ads) and only as described above.</p>
 
 <h2>5. Data retention</h2>
 <ul>
@@ -75,10 +92,10 @@ TomTom privacy policy: <a href="https://www.tomtom.com/privacy/">https://www.tom
 <ul>
   <li>Access the data we hold about you</li>
   <li>Request deletion of your data</li>
-  <li>Revoke advertising consent (tap "Manage privacy settings" in the app's Settings)</li>
+  <li>Revoke advertising consent (tap "Manage privacy settings" in the app's Settings; on iOS you can also turn off tracking in Settings › Privacy &amp; Security › Tracking)</li>
   <li>Lodge a complaint with your local data protection authority</li>
 </ul>
-<p>To exercise these rights, email <a href="mailto:support.GPS Camera Pro 2026@gmail.com">support.GPS Camera Pro 2026@gmail.com</a>.</p>
+<p>To exercise these rights, email <a href="mailto:support.gpscampro@gmail.com">support.gpscampro@gmail.com</a>.</p>
 
 <h2>7. Children</h2>
 <p>This app is not directed at children under 13. We do not knowingly collect data from children.</p>
@@ -88,6 +105,6 @@ TomTom privacy policy: <a href="https://www.tomtom.com/privacy/">https://www.tom
 
 <h2>9. Contact</h2>
 <p>Shrey Pinnada<br>
-<a href="mailto:support.GPS Camera Pro 2026@gmail.com">support.GPS Camera Pro 2026@gmail.com</a></p>
+<a href="mailto:support.gpscampro@gmail.com">support.gpscampro@gmail.com</a></p>
 </body>
 </html>
